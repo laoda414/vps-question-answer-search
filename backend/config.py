@@ -11,12 +11,12 @@ load_dotenv()
 
 # Project paths
 BASE_DIR = Path(__file__).parent.parent
-DATA_DIR = BASE_DIR / "data"
-LOGS_DIR = BASE_DIR / "logs"
+DATA_DIR = Path(os.getenv("DATA_DIR", str(BASE_DIR / "data")))
+LOGS_DIR = Path(os.getenv("LOGS_DIR", str(BASE_DIR / "logs")))
 
 # Ensure directories exist
-DATA_DIR.mkdir(exist_ok=True)
-LOGS_DIR.mkdir(exist_ok=True)
+DATA_DIR.mkdir(exist_ok=True, parents=True)
+LOGS_DIR.mkdir(exist_ok=True, parents=True)
 
 
 class Config:
