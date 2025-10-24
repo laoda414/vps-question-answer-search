@@ -70,3 +70,6 @@ nginx/ssl/*.key
 
 # Nginx logs
 nginx/logs/*.log
+
+# Deployment documentation (contains sensitive credentials and VPS info)
+DEPLOYMENT.md
