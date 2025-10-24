@@ -1,0 +1,22 @@
+#!/bin/bash
+WSL_IP=$(hostname -I | awk '{print $1}')
+
+echo "=========================================="
+echo "QA Search Interface - Access URLs"
+echo "=========================================="
+echo ""
+echo "Frontend:"
+echo "  http://localhost:3000"
+echo "  http://$WSL_IP:3000"
+echo ""
+echo "Backend API:"
+echo "  http://localhost:5000"
+echo "  http://$WSL_IP:5000"
+echo ""
+echo "Backend Health Check:"
+echo "  http://localhost:5000/api/health"
+echo "  http://$WSL_IP:5000/api/health"
+echo ""
+echo "=========================================="
+echo "Open the frontend URL in your Windows browser!"
+echo "=========================================="

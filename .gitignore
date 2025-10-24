@@ -1,0 +1,72 @@
+# Environment variables
+.env
+.env.production
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+env/
+
+# Database and Data (NEVER commit client data!)
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+data/
+!data/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js (Frontend)
+node_modules/
+frontend/build/
+frontend/dist/
+.DS_Store
+
+# Cache
+*.cache
+.translation_cache.json
+translation_cache.json
+
+# Docker
+*.pid
+
+# Backups
+backups/
+
+# SSL Certificates
+nginx/ssl/*.pem
+nginx/ssl/*.key
+
+# Nginx logs
+nginx/logs/*.log

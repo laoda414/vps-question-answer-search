@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: qa-search-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data:rw
+      - ./logs:/app/logs:rw
+    restart: unless-stopped
+    networks:
+      - qa-search-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: qa-search-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - qa-search-network
+
+  # Telegram Bot
+  telegram-bot:
+    build:
+      context: ./telegram_bot
+      dockerfile: Dockerfile
+    container_name: qa-search-telegram-bot
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data:rw
+    restart: unless-stopped
+    networks:
+      - qa-search-network
+
+networks:
+  qa-search-network:
+    driver: bridge
+
+volumes:
+  data:
+  logs:
