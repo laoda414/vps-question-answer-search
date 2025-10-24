@@ -294,10 +294,8 @@ def get_investment_analysis(current_user):
 
     try:
         # Get path to investment analysis directory
-        data_dir = os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
-            'data', 'add_contact_phrase', 'investment_analysis'
-        )
+        from config import DATA_DIR
+        data_dir = os.path.join(DATA_DIR, 'add_contact_phrase', 'investment_analysis')
 
         if not os.path.exists(data_dir):
             return jsonify({'error': 'Investment analysis directory not found'}), 404
@@ -407,10 +405,8 @@ def get_investment_filters(current_user):
     """Get available filter options for investment analysis"""
     try:
         # Get path to investment analysis directory
-        data_dir = os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
-            'data', 'add_contact_phrase', 'investment_analysis'
-        )
+        from config import DATA_DIR
+        data_dir = os.path.join(DATA_DIR, 'add_contact_phrase', 'investment_analysis')
 
         if not os.path.exists(data_dir):
             return jsonify({'error': 'Investment analysis directory not found'}), 404
@@ -481,10 +477,8 @@ def get_investment_stats(current_user):
     """Get statistics for investment analysis data"""
     try:
         # Get path to investment analysis directory
-        data_dir = os.path.join(
-            os.path.dirname(os.path.dirname(__file__)),
-            'data', 'add_contact_phrase', 'investment_analysis'
-        )
+        from config import DATA_DIR
+        data_dir = os.path.join(DATA_DIR, 'add_contact_phrase', 'investment_analysis')
 
         if not os.path.exists(data_dir):
             return jsonify({'error': 'Investment analysis directory not found'}), 404
