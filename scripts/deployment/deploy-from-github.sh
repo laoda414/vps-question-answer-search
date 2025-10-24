@@ -17,8 +17,8 @@ NC='\033[0m' # No Color
 PROJECT_DIR="/opt/qa-investment-search"
 BACKUP_DIR="$PROJECT_DIR/backups"
 COMPOSE_FILE="docker-compose.prod.yml"
-GITHUB_REPO="https://github.com/YOUR_USERNAME/vps-question-answer-search.git"  # Update this
-BRANCH="main"
+GITHUB_REPO="https://github.com/laoda414/vps-question-answer-search.git"
+BRANCH="master"
 
 echo "=================================================="
 echo "QA Search - GitHub Deployment"
