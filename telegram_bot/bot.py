@@ -30,8 +30,8 @@ if ADMIN_TELEGRAM_USER_ID == 0:
     print("❌ Error: ADMIN_TELEGRAM_USER_ID not set in .env file")
     sys.exit(1)
 
-# Make path absolute
-DB_PATH = Path(__file__).parent.parent / "data" / "qa_search.db"
+# Make path absolute - use DATABASE_PATH from env or default
+DB_PATH = Path(DATABASE_PATH) if DATABASE_PATH else Path(__file__).parent.parent / "data" / "qa_search.db"
 
 
 def get_db_connection():
