@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
 
     if (token && username) {
       // Verify token is still valid
-      api.get('/api/auth/verify')
+      api.get('/auth/verify')
         .then(() => {
           setUser({ username, token })
           setLoading(false)
@@ -39,7 +39,7 @@ export function AuthProvider({ children }) {
 
   const login = async (username, password) => {
     try {
-      const response = await api.post('/api/auth/login', { username, password })
+      const response = await api.post('/auth/login', { username, password })
       const { access_token, username: returnedUsername } = response.data
 
       sessionStorage.setItem('token', access_token)

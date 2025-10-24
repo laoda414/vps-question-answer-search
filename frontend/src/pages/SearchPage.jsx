@@ -43,7 +43,7 @@ function SearchPage() {
 
   const loadAvailableFilters = async () => {
     try {
-      const response = await api.get('/api/filters')
+      const response = await api.get('/filters')
       setAvailableFilters(response.data)
     } catch (err) {
       console.error('Failed to load filters:', err)
@@ -67,7 +67,7 @@ function SearchPage() {
         if (!params[key]) delete params[key]
       })
 
-      const response = await api.get('/api/search', { params })
+      const response = await api.get('/search', { params })
       setResults(response.data.results)
       setPagination(response.data.pagination)
     } catch (err) {
@@ -95,7 +95,7 @@ function SearchPage() {
         if (!params[key]) delete params[key]
       })
 
-      const response = await api.get('/api/export', {
+      const response = await api.get('/export', {
         params,
         responseType: 'blob'
       })

@@ -51,7 +51,7 @@ function InvestmentAnalysisPage() {
 
   const loadAvailableFilters = async () => {
     try {
-      const response = await api.get('/api/investment-analysis/filters')
+      const response = await api.get('/investment-analysis/filters')
       setAvailableFilters(response.data)
     } catch (err) {
       console.error('Failed to load filters:', err)
@@ -60,7 +60,7 @@ function InvestmentAnalysisPage() {
 
   const loadStats = async () => {
     try {
-      const response = await api.get('/api/investment-analysis/stats')
+      const response = await api.get('/investment-analysis/stats')
       setStats(response.data)
     } catch (err) {
       console.error('Failed to load stats:', err)
@@ -84,7 +84,7 @@ function InvestmentAnalysisPage() {
         if (!params[key] && params[key] !== 0) delete params[key]
       })
 
-      const response = await api.get('/api/investment-analysis', { params })
+      const response = await api.get('/investment-analysis', { params })
       setResults(response.data.results)
       setPagination(response.data.pagination)
     } catch (err) {
